@@ -3,6 +3,8 @@ import pygame
 import galactica.settings as settings
 from engine.window import GameWindow
 from engine.camera import Camera
+from engine.events import Events
+from engine.loop import Loop
 
 
 if __name__ == "__main__":
@@ -22,5 +24,15 @@ if __name__ == "__main__":
         DEBUG=settings.CAMERA_DEBUG
     )
     
-    camera.updateWindow()
-    n = input()
+    events = Events.GetEvents(
+        DEBUG=settings.EVENTS_DEBUG
+    )
+    
+    loop = Loop.GetLoop(
+        GAME_WINDOW=window,
+        CAMERA=camera,
+        EVENTS=events,
+        DEBUG=settings.LOOP_DEBUG
+    )
+    
+    loop.run()
