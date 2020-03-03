@@ -28,7 +28,7 @@ class Loop:
                 delta = self.clock.tick(settings.LOOP_FPS)
 
                 self.events.update()
-                self.camera.update()
+                self.camera.update(delta)
                 self.gameWindow.update()
 
                 # check important things
