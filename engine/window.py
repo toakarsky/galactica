@@ -33,7 +33,7 @@ class GameWindow:
                 pygame.display.set_icon(self.icon)
 
         def handleEvents(self):
-            for event in Events.GetEvents().allEventsList:
+            for event in Events.GetEvents().getEventsByGroup('WINDOW'):
                 if event.type == pygame.QUIT:
                     if self.debug:
                         print('***********')

@@ -11,6 +11,15 @@ CAMERA_DEBUG = True
 
 # EVENTS SETTINGS
 EVENTS_DEBUG = True
+EVENTS_MAPPING = {
+    'WINDOW': [
+        'QUIT'
+    ],
+    'INPUT': [
+        'KEYDOWN',
+        'KEYUP'
+    ]
+}
 
 # LOOP SETTINGS
 LOOP_DEBUG = True
