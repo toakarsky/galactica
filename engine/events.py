@@ -43,7 +43,7 @@ class Events:
                 if event.type == pygame.QUIT and 'QUIT' in self.groupByEventTypeMap:
                     self.eventsByGroupMap[self.groupByEventTypeMap['QUIT']].append(
                         event)
-                elif event.type == pygame.KEYDOWN and 'KEYUP' in self.groupByEventTypeMap:
+                elif event.type == pygame.KEYUP and 'KEYUP' in self.groupByEventTypeMap:
                     self.eventsByGroupMap[self.groupByEventTypeMap['KEYUP']].append(
                         event)
                 elif event.type == pygame.KEYDOWN and 'KEYDOWN' in self.groupByEventTypeMap:

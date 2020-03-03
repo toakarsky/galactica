@@ -1,9 +1,10 @@
 import pygame
 
 import galactica.settings as settings
+from engine.events import Events
 from engine.window import GameWindow
 from engine.camera import Camera
-from engine.events import Events
+from engine.input import Input
 from engine.loop import Loop
 
 
@@ -23,16 +24,21 @@ if __name__ == "__main__":
         BACKGROUND_TILE_PATH=settings.CAMERA_BACKGROUND_TILE_PATH,
         DEBUG=settings.CAMERA_DEBUG
     )
-    
+
     events = Events.GetEvents(
         DEBUG=settings.EVENTS_DEBUG
     )
-    
+
+    input = Input.GetInput(
+        DEBUG=settings.INPUT_DEBUG
+    )
+
     loop = Loop.GetLoop(
         GAME_WINDOW=window,
         CAMERA=camera,
         EVENTS=events,
+        INPUT=input,
         DEBUG=settings.LOOP_DEBUG
     )
-    
+
     loop.run()
